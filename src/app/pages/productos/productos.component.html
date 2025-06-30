@@ -1,0 +1,18 @@
+<!-- productos.component.html -->
+<h2>Listado de Productos</h2>
+
+<ul>
+    @for (prod of productos; track $index) {
+        <li>
+            {{ prod.nombre }} - ${{ prod.precio }}
+            <button (click)="eliminarProducto(prod.id)">Eliminar</button>
+         </li>
+    }
+
+</ul>
+
+<h3>Agregar nuevo producto</h3>
+<input [(ngModel)]="nuevo.nombre" placeholder="Nombre" />
+<input [(ngModel)]="nuevo.precio" placeholder="Precio" type="number" />
+<button (click)="crearProducto()">Agregar</button>
+
